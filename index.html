@@ -9,6 +9,7 @@
 
 		<script type="text/javascript" src="js/order-tab.js"></script>
 		<script type="text/javascript" src="js/recipe-tab.js"></script>
+		<script type="text/javascript" src="js/ingredient-tab.js"></script>
 	</head>
 	<body>
 
@@ -143,21 +144,25 @@
 						</div>
 				  	</div>
 				 	<div class="tab-pane fade" id="id_ingredientContent_tab" role="tabpanel" aria-labelledby="id_ingredient-tab">
-				 		<div class="text-right col-11 pb-4">
-							<a href="#" id="id_createIngredient" class="btn btn-primary btn-md col-2 row">
-					          <i class="fa fa-plus-circle" aria-hidden="true"></i> Create New Ingredient
-					        </a>
-					        <div class="form-group col-3">
-							    <label for="id_selectIngredientCategory">Select Category</label>
-							    <select class="form-control" id="id_selectIngredientCategory">
-							      <option>All</option>
-							      <option>Provisions</option>
-							      <option>Provisions1</option>
-							      <option>Provisions2</option>
-							      <option>Provisions3</option>
-							    </select>
+				 	    <div class="row">
+					 		<div class="col-6 pb-4">
+						        <div class="form-group">
+								    <label for="id_selectIngredientCategory">Select Category</label>
+								    <select class="form-control" id="id_selectIngredientCategory">
+								      <option>All</option>
+								      <option>Provisions</option>
+								      <option>Provisions1</option>
+								      <option>Provisions2</option>
+								      <option>Provisions3</option>
+								    </select>
+								</div>
 							</div>
-						</div>
+							<div id="id_createIngredient" class="text-right col-6 mt-4">
+								<a data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-md mr-3">
+						          <i class="fa fa-plus-circle" aria-hidden="true"></i> Create Ingredient
+						        </a>
+						    </div>
+					    </div>
 				 		<div class="list-group col-11">
 							<a href="#" class="list-group-item list-group-item-action cls_ingredientCateory active">
 							    provisions
@@ -191,10 +196,62 @@
 				</div>
 			</div>
 		</div>
+		
+	 <!-- Modal -->
+	 <div class="modal fade" id="myModal" role="dialog">
+	   <div class="modal-dialog">
+	     <!-- Modal content-->
+	     <div class="modal-content">
+	       <div class="modal-header">
+	       <h4 class="modal-title">Create Ingredient</h4>
+	         <button type="button" class="close" data-dismiss="modal">&times;</button>
+	       </div>
+	       <div class="modal-body">
+	         <form id="id_createIngredientForm">
+			    <div class="form-group">
+			      <label for="name">Name</label>
+			      <input type="name" class="form-control" required id="name" placeholder="Enter name" name="email">
+			    </div>
+			    <div class="form-group">
+			      <label for="tamilname">Tamil Name</label>
+			      <input type="text" class="form-control" required id="tamilname" placeholder="Enter Tamil Name" name="tamilname">
+			    </div>
+			    <div class="form-group">
+				  	<label for="sel1">Unit</label>
+				  	<!-- TODO: Need to get the options dynamically from units file -->
+                    <select class="form-control" id="sel1">
+				    	<option>gm</option>
+				   		<option>ml</option>
+				    	<option>nos</option>
+				    	<option>kattu</option>
+				    	<option>kavuli</option>
+				    	<option>manu</option>
+				    	<option>pocket</option>
+				    </select>
+				</div>
+				<div class="form-group">
+				  	<label for="sel1">Category</label>
+				  	<!-- TODO: Need to get the options dynamically from category file -->
+                    <select class="form-control" id="sel1">
+				    	<option>Category1</option>
+				   		<option>Category2</option>
+				    	<option>Category3</option>
+				    	<option>Category4</option>
+				    	<option>Category5</option>
+				    	<option>Category6</option>
+				    	<option>Category7</option>
+				    </select>
+				</div>
+			    <button type="submit" class="btn btn-info float-right">Save</button>
+		     </form>
+	       </div>
+	     </div>
+		
 	</body>
 	<script type="text/javascript">
         $(document).on('ready', function() {
             new OrderTab();
+            new IngredientTab();
         });
      </script>
 </html>
