@@ -1,0 +1,200 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" type="text/css" href="css/lib/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/lib/bootstrap.min.css">
+		<script type="text/javascript" src="js/lib/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+
+		<script type="text/javascript" src="js/order-tab.js"></script>
+		<script type="text/javascript" src="js/recipe-tab.js"></script>
+	</head>
+	<body>
+
+		<div class="cls_pageContainer container-fluid col" id="id_pageIndex">
+			<div id="id_pageHeader" class="cls_pageHeader row">
+				<div class="col-3 text-center">
+					<div class="text-danger font-weight-bold">
+						Name - 1
+					</div>
+					<div>
+						9874563210
+					</div>
+					<br>
+					<div class="text-danger font-weight-bold">
+						Name - 2
+					</div>
+					<div>
+						9874563210
+					</div>	
+				</div>
+				<div class="col-6 p-4 text-center">
+					<h2  class="text-success">
+						Sulur Vignesh Catering
+					</h2>
+				</div>
+				<div class="col-3 text-center">
+					<div class="text-danger font-weight-bold">
+						Name - 3
+					</div>
+					<div>
+						9874563210
+					</div>
+					<br>
+					<div class="text-danger font-weight-bold">
+						Name - 4
+					</div>
+					<div>
+						9874563210
+					</div>	
+				</div>
+			</div>
+			<div class="row text-center bg-secondary">
+				<div class="col font-italic text-light text-center">
+					VIP Garden, Ranganathapuram, Sulur, Coimbatore - 641 002
+				</div>
+			</div>
+			<div class="p-2">
+				<ul class="nav nav-tabs text-center" id="id_homepage" role="tablist">
+				  	<li class="nav-item col-4">
+				    	<a class="nav-link active font-weight-bold" id="id_order-tab" data-toggle="tab" href="#id_orderContent_tab" role="tab" aria-controls="order" aria-selected="true">Order</a>
+				  	</li>
+				  	<li class="nav-item col-4">
+				   		<a class="nav-link font-weight-bold" id="id_recipe-tab" data-toggle="tab" href="#id_recipeContent_tab" role="tab" aria-controls="recipe" aria-selected="false">Recipe</a>
+				  	</li>
+				  	<li class="nav-item col-4">
+				    	<a class="nav-link font-weight-bold" id="id_ingredient-tab" data-toggle="tab" href="#id_ingredientContent_tab" role="tab" aria-controls="ingredient" aria-selected="false">Ingredient</a>
+				  	</li>
+				</ul>
+				<div class="tab-content p-4" id="myTabContent">
+					<div class="tab-pane fade show active" id="id_orderContent_tab" role="tabpanel" aria-labelledby="id_order-tab">
+						<div class="text-right col-11 pb-4">
+							<a href="#" id="id_createOrder" class="btn btn-primary btn-md mr-3 col-2">
+					          <i class="fa fa-plus-circle" aria-hidden="true"></i> Create New Order
+					        </a>
+						</div>
+					</div>
+				  	<div class="tab-pane fade" id="id_recipeContent_tab" role="tabpanel" aria-labelledby="id_recipe-tab">
+				  		<div class="text-right col-11 pb-4">
+							<a href="#" id="id_createRecipe" class="btn btn-primary btn-md col-2 row">
+					          <i class="fa fa-plus-circle" aria-hidden="true"></i> Create New Recipe
+					        </a>
+					        <div class="form-group col-3">
+							    <label for="id_selectRecipeCategory">Select Category</label>
+							    <select class="form-control" id="id_selectRecipeCategory">
+							      <option>All</option>
+							      <option>Sweet</option>
+							      <option>Snack</option>
+							      <option>Sweet1</option>
+							      <option>Snack1</option>
+							    </select>
+							</div>
+						</div>
+				  		<div class="list-group col-11">
+							<a href="#" class="list-group-item list-group-item-action cls_recipeCateory active">
+							    Snack
+							</a>
+							<a href="#" class="list-group-item list-group-item-action">
+								<label class="col-4">samosa</label>
+								<label class="col-4">சமோசா</label>
+								<label class="btn btn-secondary btn-md mr-3 col-2 text-center">Delete</label>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action">
+								<label class="col-4">samosa</label>
+								<label class="col-4">சமோசா</label>
+								<label class="btn btn-secondary btn-md mr-3 col-2 text-center">Delete</label>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action">
+								<label class="col-4">samosa</label>
+								<label class="col-4">சமோசா</label>
+								<label class="btn btn-secondary btn-md mr-3 col-2 text-center">Delete</label>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action disabled">
+								<label class="col-4">samosa</label>
+								<label class="col-4">சமோசா</label>
+								<label class="btn btn-secondary btn-md mr-3 col-2 text-center">Delete</label>
+							</a>
+						</div>
+						<div class="list-group col-11">
+							<a href="#" class="list-group-item list-group-item-action cls_recipeCateory active">
+							    Sweet
+							</a>
+							<a href="#" class="list-group-item list-group-item-action">
+								<label class="col-4">kajukathli</label>
+								<label class="col-4">கஜுகாத்லி</label>
+								<label class="btn btn-secondary btn-md mr-3 col-2 text-center">Delete</label>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action">
+								<label class="col-4">kajukathli</label>
+								<label class="col-4">கஜுகாத்லி</label>
+								<label class="btn btn-secondary btn-md mr-3 col-2 text-center">Delete</label>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action">
+								<label class="col-4">kajukathli</label>
+								<label class="col-4">கஜுகாத்லி</label>
+								<label class="btn btn-secondary btn-md mr-3 col-2 text-center">Delete</label>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action disabled">
+								<label class="col-4">kajukathli</label>
+								<label class="col-4">கஜுகாத்லி</label>
+								<label class="btn btn-secondary btn-md mr-3 col-2 text-center">Delete</label>
+							</a>
+						</div>
+				  	</div>
+				 	<div class="tab-pane fade" id="id_ingredientContent_tab" role="tabpanel" aria-labelledby="id_ingredient-tab">
+				 		<div class="text-right col-11 pb-4">
+							<a href="#" id="id_createIngredient" class="btn btn-primary btn-md col-2 row">
+					          <i class="fa fa-plus-circle" aria-hidden="true"></i> Create New Ingredient
+					        </a>
+					        <div class="form-group col-3">
+							    <label for="id_selectIngredientCategory">Select Category</label>
+							    <select class="form-control" id="id_selectIngredientCategory">
+							      <option>All</option>
+							      <option>Provisions</option>
+							      <option>Provisions1</option>
+							      <option>Provisions2</option>
+							      <option>Provisions3</option>
+							    </select>
+							</div>
+						</div>
+				 		<div class="list-group col-11">
+							<a href="#" class="list-group-item list-group-item-action cls_ingredientCateory active">
+							    provisions
+							</a>
+							<a href="#" class="list-group-item list-group-item-action">
+								<label class="col-3">ghee</label>
+								<label class="col-3">நெய்</label>
+								<label class="col-3">litre</label>
+								<label class="btn btn-secondary btn-md mr-3 col-2 text-center">Delete</label>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action">
+								<label class="col-3">ghee</label>
+								<label class="col-3">நெய்</label>
+								<label class="col-3">litre</label>
+								<label class="btn btn-secondary btn-md mr-3 col-2 text-center">Delete</label>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action">
+								<label class="col-3">ghee</label>
+								<label class="col-3">நெய்</label>
+								<label class="col-3">litre</label>
+								<label class="btn btn-secondary btn-md mr-3 col-2 text-center">Delete</label>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action disabled">
+								<label class="col-3">ghee</label>
+								<label class="col-3">நெய்</label>
+								<label class="col-3">litre</label>
+								<label class="btn btn-secondary btn-md mr-3 col-2 text-center">Delete</label>
+							</a>
+						</div>
+				 	</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+        $(document).on('ready', function() {
+            new OrderTab();
+        });
+     </script>
+</html>
