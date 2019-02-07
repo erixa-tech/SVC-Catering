@@ -170,29 +170,29 @@
 							<a href="#" class="list-group-item list-group-item-action cls_ingredientCateory active">
 							    provisions
 							</a>
-							<a href="#" class="list-group-item list-group-item-action">
+							<a class="list-group-item list-group-item-action ingredient_1">
 								<label class="col-3">ghee</label>
 								<label class="col-3">நெய்</label>
 								<label class="col-3">litre</label>
-								<label class="btn btn-secondary btn-md mr-3 col-2 text-center">Delete</label>
+								<label class="btn btn-secondary btn-md mr-3 col-2 text-center cls_delete" idx="1">Delete</label>
 							</a>
-							<a href="#" class="list-group-item list-group-item-action">
+							<a class="list-group-item list-group-item-action ingredient_2">
 								<label class="col-3">ghee</label>
 								<label class="col-3">நெய்</label>
 								<label class="col-3">litre</label>
-								<label class="btn btn-secondary btn-md mr-3 col-2 text-center">Delete</label>
+								<label class="btn btn-secondary btn-md mr-3 col-2 text-center cls_delete" idx="2">Delete</label>
 							</a>
-							<a href="#" class="list-group-item list-group-item-action">
+							<a class="list-group-item list-group-item-action ingredient_3">
 								<label class="col-3">ghee</label>
 								<label class="col-3">நெய்</label>
 								<label class="col-3">litre</label>
-								<label class="btn btn-secondary btn-md mr-3 col-2 text-center">Delete</label>
+								<label class="btn btn-secondary btn-md mr-3 col-2 text-center cls_delete" idx="3">Delete</label>
 							</a>
-							<a href="#" class="list-group-item list-group-item-action disabled">
+							<a class="list-group-item list-group-item-action disabled ingredient_4">
 								<label class="col-3">ghee</label>
 								<label class="col-3">நெய்</label>
 								<label class="col-3">litre</label>
-								<label class="btn btn-secondary btn-md mr-3 col-2 text-center">Delete</label>
+								<label class="btn btn-secondary btn-md mr-3 col-2 text-center cls_delete" idx="4">Delete</label>
 							</a>
 						</div>
 				 	</div>
@@ -213,16 +213,16 @@
 	         <form id="id_createIngredientForm">
 			    <div class="form-group">
 			      <label for="name">Name</label>
-			      <input type="name" class="form-control" required id="name" placeholder="Enter name" name="email">
+			      <input type="name" class="form-control" required id="id_name" placeholder="Enter name" name="name">
 			    </div>
 			    <div class="form-group">
 			      <label for="tamilname">Tamil Name</label>
-			      <input type="text" class="form-control" required id="tamilname" placeholder="Enter Tamil Name" name="tamilname">
+			      <input type="text" class="form-control" required id="id_tamilName" placeholder="Enter Tamil Name" name="tamilname">
 			    </div>
 			    <div class="form-group">
 				  	<label for="sel1">Unit</label>
 				  	<!-- TODO: Need to get the options dynamically from units file -->
-                    <select class="form-control" id="sel1">
+                    <select class="form-control" id="id_unit">
 				    	<option>gm</option>
 				   		<option>ml</option>
 				    	<option>nos</option>
