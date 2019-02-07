@@ -43,7 +43,6 @@ IngredientTab.prototype.registerEvents = function render() {
 					};
 			//File write operation
 			//_this.ingredientJsonArr.push(ingredientObj)
-			window.location.reload();
 		});
 		
 		$(".cls_delete").click(function() {
