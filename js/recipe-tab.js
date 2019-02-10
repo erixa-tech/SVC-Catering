@@ -1,4 +1,6 @@
 function RecipeTab(){
+	this.recipeCategory = ["Sweet", "HomeSweet", "Kaaram", "Idly", "Dhosa", "Chattni", "Sambar", "Kulambu", "Gravy",
+		                  "Rotty", "Biriyani", "Pachadi", "Saadam", "Oorugaai", "Baanam", "Snacks", "Baanam"];
 	this.init();
 }
 RecipeTab.prototype.init = function() {
@@ -6,6 +8,10 @@ RecipeTab.prototype.init = function() {
 	_this.render();
 };
 RecipeTab.prototype.render = function() {
+	var _this = this;
+	addOptionsToSelect(_this.recipeCategory, "id_selectRecipeCategory");
+	addOptionsToSelect(_this.recipeCategory, "id_recipeCategory");
+
 	var recipeJson = [{  
 						   "id":1,
 						   "name":"samosa",
@@ -22,8 +28,4 @@ RecipeTab.prototype.render = function() {
 						   "itemCategory":"sweet",
 						   "headCount":150
 						}];
-	var renderHtml = [];
-	for (var i = 0; i< recipeJson.length; i++) {
-				
-		}
 };

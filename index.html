@@ -79,14 +79,8 @@
 				  		<div class="row">
 				  			<div class="col-6 pb-4">
 						        <div class="form-group">
-								    <label for="id_selectRecipeCategory">Select Category</label>
-								    <select class="form-control" id="id_selectRecipeCategory">
-								      <option>All</option>
-								      <option>Sweet</option>
-								      <option>Snack</option>
-								      <option>Sweet1</option>
-								      <option>Snack1</option>
-								    </select>
+								    <label for="selectRecipeCategory">Select Category</label>
+								    <select class="form-control" id="id_selectRecipeCategory" name="selectRecipeCategory"></select>
 								</div>
 							</div>
 					  		<div id="id_createRecipe" class="text-right col-5 mt-4">
@@ -150,14 +144,8 @@
 				 	    <div class="row">
 					 		<div class="col-6 pb-4">
 						        <div class="form-group">
-								    <label for="id_selectIngredientCategory">Select Category</label>
-								    <select class="form-control" id="id_selectIngredientCategory">
-								      <option>All</option>
-								      <option>Provisions</option>
-								      <option>Provisions1</option>
-								      <option>Provisions2</option>
-								      <option>Provisions3</option>
-								    </select>
+								    <label for="selectIngredientCategory">Select Category</label>
+								    <select class="form-control" id="id_selectIngredientCategory" name="selectIngredientCategory"></select>
 								</div>
 							</div>
 							<div id="id_createIngredient" class="text-right col-5 mt-4">
@@ -220,30 +208,12 @@
 			      <input type="text" class="form-control" required id="id_tamilName" placeholder="Enter Tamil Name" name="tamilname">
 			    </div>
 			    <div class="form-group">
-				  	<label for="sel1">Unit</label>
-				  	<!-- TODO: Need to get the options dynamically from units file -->
-                    <select class="form-control" id="id_unit">
-				    	<option>gm</option>
-				   		<option>ml</option>
-				    	<option>nos</option>
-				    	<option>kattu</option>
-				    	<option>kavuli</option>
-				    	<option>manu</option>
-				    	<option>pocket</option>
-				    </select>
+				  	<label for="ingredientUnit">Unit</label>
+                    <select class="form-control" id="id_ingredientUnit" name="ingredientUnit"></select>
 				</div>
 				<div class="form-group">
-				  	<label for="sel1">Category</label>
-				  	<!-- TODO: Need to get the options dynamically from category file -->
-                    <select class="form-control" id="sel1">
-				    	<option>Category1</option>
-				   		<option>Category2</option>
-				    	<option>Category3</option>
-				    	<option>Category4</option>
-				    	<option>Category5</option>
-				    	<option>Category6</option>
-				    	<option>Category7</option>
-				    </select>
+				  	<label for="ingredientCategory">Category</label>
+                    <select class="form-control" id="id_ingredientCategory" name="ingredientCategory"></select>
 				</div>
 			    <button type="submit" class="btn btn-info float-right">Save</button>
 		     </form>
@@ -272,17 +242,8 @@
 			      <input type="text" class="form-control" required id="id_tamilName" placeholder="Enter Tamil Name" name="tamilname">
 			    </div>
 				<div class="form-group">
-				  	<label for="sel1">Category</label>
-				  	<!-- TODO: Need to get the options dynamically from category file -->
-                    <select class="form-control" id="sel1">
-				    	<option>Category1</option>
-				   		<option>Category2</option>
-				    	<option>Category3</option>
-				    	<option>Category4</option>
-				    	<option>Category5</option>
-				    	<option>Category6</option>
-				    	<option>Category7</option>
-				    </select>
+				  	<label for="recipeCategory">Category</label>
+                    <select class="form-control" id="id_recipeCategory" name="recipeCategory"></select>
 				</div>
 			    <button type="submit" class="btn btn-info float-right">Save</button>
 		     </form>
@@ -295,6 +256,7 @@
 	<script type="text/javascript">
         $(document).on('ready', function() {
             new OrderTab();
+            new RecipeTab();
             new IngredientTab();
         });
      </script>

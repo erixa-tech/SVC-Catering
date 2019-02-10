@@ -20,3 +20,15 @@ function getValueFromQueryParam(paramName)
     }
     return vars[paramName];
 }
+
+function addOptionsToSelect(optionsArray, parentId)
+{
+	if(optionsArray && optionsArray.length > 0) {
+		for(var i=0; i<optionsArray.length; i++) {
+			var select = document.getElementById(parentId);
+			var option = document.createElement("option");
+			option.text = optionsArray[i];
+			select.add(option);
+	    }
+	}
+}

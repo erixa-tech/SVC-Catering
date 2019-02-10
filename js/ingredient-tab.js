@@ -1,4 +1,6 @@
 ﻿function IngredientTab(){
+	this.ingredientCategories = ["MaligaiVibaram", "KaaiKanigal", "Extras", "Suppliments"];
+	this.ingredientUnits = ["gms", "ml", "nos", "kattu", "kowli", "pocket"];
 	this.init();
 }
 IngredientTab.prototype.init = function() {
@@ -6,8 +8,12 @@ IngredientTab.prototype.init = function() {
 	_this.render();
 	_this.registerEvents();
 };
-IngredientTab.prototype.render = function render() {
+IngredientTab.prototype.render = function() {
 	var _this = this;
+	addOptionsToSelect(_this.ingredientCategories, "id_selectIngredientCategory")
+	addOptionsToSelect(_this.ingredientCategories, "id_ingredientCategory");
+	addOptionsToSelect(_this.ingredientUnits, "id_ingredientUnit");
+
 	_this.ingredientJsonArr = [{
 							"id": 1,
 							"name": "sugar",
@@ -23,7 +29,7 @@ IngredientTab.prototype.render = function render() {
 							"unitOfMeasure": "litre"
 						}]
 };
-IngredientTab.prototype.registerEvents = function render() {
+IngredientTab.prototype.registerEvents = function() {
 	var _this = this;
 	$(document).ready(function(){
 		$("#id_createIngredientForm").submit(function() {
@@ -33,16 +39,17 @@ IngredientTab.prototype.registerEvents = function render() {
 			var name = $("#id_name").val().trim();
 			var tamilName = $("#id_tamilName").val().trim();
 			var unit = $("#id_unit").val();
+			var category = $("#id_category").val();
 
 			var ingredientObj = {
 					"id": id,
 					"name": name,
 					"tamilName": tamilName,
-					"category": "provisions", // Need to finalize the category
+					"category": category, // Need to finalize the category
 					"unitOfMeasure": unit
 					};
 			//File write operation
-			//_this.ingredientJsonArr.push(ingredientObj)
+			_this.updateIngredientData(ingredientObj)
 		});
 		
 		$(".cls_delete").click(function() {
@@ -54,3 +61,6 @@ IngredientTab.prototype.registerEvents = function render() {
 	    });
 	});
 }
+
+IngredientTab.prototype.updateIngredientData = function(ingredientObj) {
+ }
