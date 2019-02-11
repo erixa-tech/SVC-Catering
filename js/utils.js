@@ -1,5 +1,9 @@
 function addQueryParamToUrlAndReload(param, value){
 	var url = window.location.href;
+	if(url.lastIndexOf('#') == (url.length-1))
+	{
+		url = url.substring(0, url.length-1)
+	}
 	if (url.indexOf('?') > -1){
 	   url += '&'+param+'='+value;
 	}else{
@@ -31,4 +35,25 @@ function addOptionsToSelect(optionsArray, parentId)
 			select.add(option);
 	    }
 	}
+}
+
+function getFileValue()
+{
+	/*jQuery.get('js/Extras.txt').done(function(txt){
+		console.log("txt", txt);
+	});*/
+	
+	$.ajax({
+        headers: { "Accept": "application/json"},
+        type: 'GET',
+        url: 'data/Extras.txt',
+        crossDomain: true,
+        beforeSend: function(xhr){
+            xhr.withCredentials = true;
+      },
+        success: function(data, textStatus, request){
+            console.log("123" + data);
+        }
+	});
+
 }

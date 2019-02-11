@@ -11,6 +11,7 @@ OrderTab.prototype.render = function(isNewOrder){
 	var renderHtml = [];
 	if(isNewOrder == 'true')
 	{
+		//getFileValue();
 		renderHtml += '<form>'
 			+ '  <div class="form-group">'
 			+ '    <label for="clientName">Name</label>'
