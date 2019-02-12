@@ -226,7 +226,7 @@
 	 <div class="modal fade" id="recipeModal" role="dialog">
 	   <div class="modal-dialog">
 	     <!-- Modal content-->
-	     <div class="modal-content">
+	     <div class="modal-content cls_recipeCreateModal" style="width: 750px;">
 	       <div class="modal-header">
 	       <h4 class="modal-title">Create Receipe</h4>
 	         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -244,6 +244,30 @@
 				<div class="form-group">
 				  	<label for="recipeCategory">Category</label>
                     <select class="form-control" id="id_recipeCategory" name="recipeCategory"></select>
+				</div>
+				<h5><u>Add Ingredients to the Recipe</u></h5>
+				<div class="form-group">
+				    <div class="row">
+					    <div class="col">
+						  	<label for="ingredientCategory">Category</label>
+		                    <select class="form-control" id="id_ingredientCategory" name="ingredientCategory"></select>
+	                    </div>
+	                    <div class="col">
+						  	<label for="ingredientName">Name</label>
+		                    <select class="form-control" id="id_ingredientName" name="ingredientName"></select>
+	                    </div>
+	                    <div class="col">
+						  	<label for="ingredientUnit">Unit</label>
+		                    <select class="form-control" id="id_ingredientUnit" name="ingredientUnit" disabled></select>
+	                    </div>
+	                    <div class="col">
+					      <label for="qunatity">Quantity</label>
+					      <input type="text" class="form-control" required id="id_qunatity" placeholder="Enter Quantity" name="qunatity">
+					    </div>
+					    <div class="col mt-4">
+					    	<button class="btn btn-success mt-2">Add</button>
+					    </div>
+                    </div>
 				</div>
 			    <button type="submit" class="btn btn-info float-right">Save</button>
 		     </form>
