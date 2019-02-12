@@ -132,7 +132,7 @@ OrderTab.prototype.render = function(isNewOrder){
 };
 OrderTab.prototype.renderEvents = function() {
 	$(document).on("click", ".cls_orderDetails", function(){
-		alert("Order Clicked");
+		alert("Order Clicked");// Do ur code here
 	});
 
 	$(document).on("click", "#id_createOrder", function(){

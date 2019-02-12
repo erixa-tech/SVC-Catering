@@ -14,20 +14,57 @@ IngredientTab.prototype.render = function() {
 	addOptionsToSelect(_this.ingredientCategories, "id_ingredientCategory");
 	addOptionsToSelect(_this.ingredientUnits, "id_ingredientUnit");
 
-	_this.ingredientJsonArr = [{
-							"id": 1,
-							"name": "sugar",
-							"tamilName": "சர்க்கரை",
-							"category": "provisions",
-							"unitOfMeasure": "kilogram"
-							},
-							{
-							"id": 2,
-							"name" : "ghee",
-							"tamilName": "நெய்",
-							"category": "provisions",
-							"unitOfMeasure": "litre"
-						}]
+	var ingredientJson = {
+								"MaligaiVibaram" : [{
+									"id": 1,
+									"name": "sugar",
+									"tamilName": "சர்க்களை",
+									"category": "MaligaiVibaram",
+									"unitOfMeasure": "kilogram"
+									},
+									{
+									"id": 2,
+									"name" : "ghee",
+									"tamilName": "ணெய்",
+									"category": "MaligaiVibaram",
+									"unitOfMeasure": "litre"
+								}],
+								"Extras" : [{
+									"id": 3,
+									"name": "sugar",
+									"tamilName": "சர்க்களை",
+									"category": "Extras",
+									"unitOfMeasure": "kilogram"
+									},
+									{
+									"id": 4,
+									"name" : "ghee",
+									"tamilName": "ணெய்",
+									"category": "Extras",
+									"unitOfMeasure": "litre"
+								}]
+							}
+	var catagoryJson;
+	var renderHtml = [];
+	for (var i =0; i<_this.ingredientCategories.length; i++ ) {
+		catagoryJson = ingredientJson[_this.ingredientCategories[i]];
+		if(catagoryJson){
+			renderHtml += "<div class='list-group col-11'>"
+							+ "<a href='' class='list-group-item list-group-item-action cls_ingredientCateory active'>"
+								+ _this.ingredientCategories[i]
+
+						for(var j=0; j<catagoryJson.length ; j++){
+							renderHtml += "<a href='' class='list-group-item list-group-item-action ingredient_"+ catagoryJson[j].id +"'>"
+											+ "<label class='col-4'>" + catagoryJson[j].name +"</label>"
+											+ "<label class='col-4'>" + catagoryJson[j].tamilName +"</label>"
+											+ "<label class='btn btn-secondary btn-md mr-3 col-2 text-center cls_delete' idx=" + catagoryJson[j].id +">Delete</label>"
+										+ "</a>"
+						}
+			renderHtml += "</a>"
+					   + "</div>"
+		}
+	}
+	$("#id_ingredientContent_tab").append(renderHtml);
 };
 IngredientTab.prototype.registerEvents = function() {
 	var _this = this;

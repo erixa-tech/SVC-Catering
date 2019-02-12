@@ -12,8 +12,7 @@ function addQueryParamToUrlAndReload(param, value){
 	window.location.href = url;
 }
 
-function getValueFromQueryParam(paramName)
-{
+function getValueFromQueryParam(paramName){
     var vars = [], hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
     for(var i = 0; i < hashes.length; i++)
@@ -25,8 +24,7 @@ function getValueFromQueryParam(paramName)
     return vars[paramName];
 }
 
-function addOptionsToSelect(optionsArray, parentId)
-{
+function addOptionsToSelect(optionsArray, parentId){
 	if(optionsArray && optionsArray.length > 0) {
 		for(var i=0; i<optionsArray.length; i++) {
 			var select = document.getElementById(parentId);
@@ -37,8 +35,7 @@ function addOptionsToSelect(optionsArray, parentId)
 	}
 }
 
-function getFileValue()
-{
+function getFileValue(){
 	/*jQuery.get('js/Extras.txt').done(function(txt){
 		console.log("txt", txt);
 	});*/
