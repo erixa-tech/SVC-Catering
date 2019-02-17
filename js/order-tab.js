@@ -11,6 +11,7 @@ OrderTab.prototype.render = function(isNewOrder){
 	var renderHtml = [];
 	if(isNewOrder == 'true')
 	{
+		$("#id_createOrder").attr('hidden', true);
 		//getFileValue();
 		renderHtml += '<form>'
 			+ '  <div class="form-group">'
@@ -41,7 +42,7 @@ OrderTab.prototype.render = function(isNewOrder){
 			+ '    <label for="clientNotes">Notes</label>'
 			+ '    <textarea class="form-control" id="clientNotes" rows="3" placeholder="Enter Any Additional Notes"></textarea>'
 			+ '  </div>'
-			+ '  <div class="form-group">'
+			/* + '  <div class="form-group">'
 			+ '    <label for="serviceForms">Service Forms</label>'
 			+ '    <div class="card w-75" id="serviceForms">'
 			+ '      <div class="card-body">'
@@ -52,12 +53,13 @@ OrderTab.prototype.render = function(isNewOrder){
 			+ '        <a href="#" class="card-link">Another link</a>'
 			+ '      </div>'
 			+ '    </div>'
-			+ '  </div>'
-			+ '  <button type="submit" class="btn btn-primary">Submit</button>'
+			+ '  </div>' */
+			+ '  <button type="submit" class="btn btn-primary">Save and Proceed To Service Form</button>'
 			+ '</form>';
 	}
 	else
 	{
+		$("#id_createOrder").attr('hidden', false);
 		var orderJson = [{
 							"name": "Ganapathy Catering Services",
 							"contactNo": "9876543210",
