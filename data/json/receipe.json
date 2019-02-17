@@ -1,28 +1,28 @@
 ﻿  [
     {
-	"id" : 1,
-"name": "samosa",
-          "tamilName": "சமோசா",
+	    "id" : 1,
+        "name": "samosa",
+	    "tamilName": "சமோசா",
     	"Ingredients": [
       	{
-                    "id" : 7,
+            "id" : 7,
           	"name" : "oil",
-                    "tamilName" : "எண்ணெய்",
+            "tamilName" : "எண்ணெய்",
           	"quantity": "500",
           	"unitofmeasure": "millilitre"
       	},
       	{
-                    "id" : 6,
+            "id" : 6,
           	"name" : "onion",
-	       "tamilName" : "வெங்காயம்",
+	        "tamilName" : "வெங்காயம்",
           	"quantity": "100",
           	"unitofmeasure": "count"
       	},
       	{
-                    "id" : 5,
+            "id" : 5,
           	"name": "potato",
-	       "tamilName" : "உருளைக்கிழங்கு",
-          "quantity": "200",
+	        "tamilName" : "உருளைக்கிழங்கு",
+            "quantity": "200",
           	"unitofmeasure": "count"
       	}
     	],
@@ -30,35 +30,35 @@
     	"headCount": 100
   },
   {
-	"id" : 2,
-"name": " kajukathli ",
-          "tamilName": " கஜுகாத்லி ",
+	    "id" : 2,
+	    "name": " kajukathli ",
+        "tamilName": " கஜுகாத்லி ",
     	"Ingredients": [
       	{
-                    "id" : 4,
+            "id" : 4,
           	"name": "cashew",
-		"tamilName" : "முந்திரி",
+		    "tamilName" : "முந்திரி",
           	"quantity": "500",
           	"unitofmeasure": "grams"
       	},
       	{
           	"id" : 1,
-                    "name" : "sugar",
-	       "tamilName" : "சர்க்கரை",
+            "name" : "sugar",
+	        "tamilName" : "சர்க்கரை",
           	"quantity": "500",
           	"unitofmeasure": "grams"
       	},
       	{
-                    "id" : 2,
+            "id" : 2,
           	"name": ghee",
-	       "tamilName" : "நெய்",
+	        "tamilName" : "நெய்",
           	"quantity": "500",
           	"unitofmeasure": "millilitre"
       	},
       	{
-                    "id" : 3,
+            "id" : 3,
           	"name": "water",
-	       "tamilName" : "நீர்",
+	        "tamilName" : "நீர்",
           	"quantity": "10",
           	"unitofmeasure": "litre"
       	}],
