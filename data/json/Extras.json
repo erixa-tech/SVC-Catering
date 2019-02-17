@@ -2,27 +2,27 @@
     {
       "id": 1,
       "name": "ஸ்வீட்டுக்கு ஸ்பெஷல் பசும்பால்(தேன்பால்)",
-      "unit": "gram"
+      "unit": "ml"
     },
     {
       "id": 2,
       "name": "அரோமா ஸ்பெஷல் பாக்கெட் பால்",
-      "unit": "gram"
+      "unit": "ml"
     },
     {
       "id": 3,
       "name": "அரோமா ஸ்பெஷல் பாக்கெட் தயிர்",
-      "unit": "gram"
+      "unit": "ml"
     },
     {
       "id": 4,
       "name": "20லி தண்ணீர் கேன் TAP'D Water (AKA aqua farms)",
-      "unit": "gram"
+      "unit": "nos"
     },
     {
       "id": 5,
       "name": "300மிலி குடிநீர் பாட்ல் TAP'D Water (AKA aqua farms)",
-      "unit": "gram"
+      "unit": "nos"
     },
     {
       "id": 6,
@@ -36,8 +36,8 @@
     },
     {
       "id": 8,
-      "name": "சிவசக்தி ஸ்பெஷல் நெய்",
-      "unit": "gram"
+      "name": "சிவசக்தி ஸ்பெஷல் நெய் (டின்)",
+      "unit": "nos"
     },
     {
       "id": 9,
@@ -97,6 +97,6 @@
     {
       "id": 20,
       "name": "ஐஸ்பார் (50கிலோ அளவு)",
-      "unit": "gram"
+      "unit": "nos"
     }
 ]
