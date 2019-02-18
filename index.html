@@ -11,6 +11,9 @@
 		<script type="text/javascript" src="js/order-tab.js"></script>
 		<script type="text/javascript" src="js/recipe-tab.js"></script>
 		<script type="text/javascript" src="js/ingredient-tab.js"></script>
+		<script>
+		    var ingredientCategories = ["Maligai", "KaaiKanigal", "Extras", "Suppliments"];
+        </script> 
      </head>
 	<body>
 		<div class="cls_pageContainer container-fluid col" id="id_pageIndex">
@@ -100,7 +103,7 @@
 								</div>
 							</div>
 							<div id="id_createIngredient" class="text-right col-5 mt-4">
-								<a data-toggle="modal" data-target="#ingredientModal" class="btn btn-primary btn-md mr-3 text-white">
+								<a class="btn btn-primary btn-md mr-3 text-white cls_createIngredient" data-toggle="modal" data-target="#ingredientModal">
 						          <i class="fa fa-plus-circle" aria-hidden="true"></i> Create Ingredient
 						        </a>
 						    </div>
@@ -121,21 +124,25 @@
 	       </div>
 	       <div class="modal-body">
 	         <form id="id_createIngredientForm">
-			    <div class="form-group">
-			      <label for="name">Name</label>
-			      <input type="name" class="form-control" required id="id_name" placeholder="Enter name" name="name">
+	            <div class="form-group d-none">
+			      <label for="id">Id</label>
+			      <input type="text" class="form-control cls_ingredientId" id="id_id" placeholder="Enter Id" name="id">
 			    </div>
 			    <div class="form-group">
-			      <label for="tamilname">Tamil Name</label>
-			      <input type="text" class="form-control" required id="id_tamilName" placeholder="Enter Tamil Name" name="tamilname">
+			      <label for="name">Name*</label>
+			      <input type="name" class="form-control cls_ingredientName" required id="id_name" placeholder="Enter name" name="name">
+			    </div>
+			    <div class="form-group">
+			      <label for="tamilname">Tamil Name*</label>
+			      <input type="text" class="form-control cls_ingredientTamilName" required id="id_tamilName" placeholder="Enter Tamil Name" name="tamilname">
 			    </div>
 			    <div class="form-group">
 				  	<label for="ingredientUnit">Unit</label>
-                    <select class="form-control" id="id_ingredientUnit" name="ingredientUnit"></select>
+                    <select class="form-control cls_ingredientUnit" id="id_ingredientUnit" name="ingredientUnit"></select>
 				</div>
 				<div class="form-group">
 				  	<label for="ingredientCategory">Category</label>
-                    <select class="form-control" id="id_ingredientCategory" name="ingredientCategory"></select>
+                    <select class="form-control cls_ingredientCategory" id="id_ingredientCategory" name="ingredientCategory"></select>
 				</div>
 			    <button type="submit" class="btn btn-info float-right">Save</button>
 		     </form>
@@ -157,7 +164,7 @@
 	         <form id="id_createReceipeForm">
 			    <div class="form-group">
 			      <label for="name">Name</label>
-			      <input type="name" class="form-control" required id="id_name" placeholder="Enter name" name="name">
+			      <input type="text" class="form-control" required id="id_name" placeholder="Enter name" name="name">
 			    </div>
 			    <div class="form-group">
 			      <label for="tamilname">Tamil Name</label>
