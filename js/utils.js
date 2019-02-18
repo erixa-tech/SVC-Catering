@@ -26,8 +26,8 @@ function getValueFromQueryParam(paramName){
 
 function addOptionsToSelect(optionsArray, parentId){
 	if(optionsArray && optionsArray.length > 0) {
+		var select = document.getElementById(parentId);
 		for(var i=0; i<optionsArray.length; i++) {
-			var select = document.getElementById(parentId);
 			var option = document.createElement("option");
 			option.text = optionsArray[i];
 			select.add(option);

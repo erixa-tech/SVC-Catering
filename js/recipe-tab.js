@@ -11,6 +11,7 @@ RecipeTab.prototype.render = function() {
 	var _this = this;
 	addOptionsToSelect(_this.recipeCategory, "id_selectRecipeCategory");
 	addOptionsToSelect(_this.recipeCategory, "id_recipeCategory");
+	addOptionsToSelect(ingredientCategories, "id_ingredientCategory_recipe");
 
 	var recipeJson = {"Snacks" : [
 								{
