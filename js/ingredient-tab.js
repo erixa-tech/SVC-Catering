@@ -1,5 +1,5 @@
 ﻿function IngredientTab(){
-	this.ingredientUnits = ["kg", "gram", "ltr", "ml", "nos", "kattu", "kowli", "pocket"];
+	this.ingredientUnits = ["gram", "ml", "nos", "kattu", "kowli", "pocket", "meter"];
 	this.init();
 }
 IngredientTab.prototype.init = function() {
@@ -27,7 +27,7 @@ IngredientTab.prototype.render = function() {
 						for(var j=0; j<catagoryJson.length ; j++){
 							renderHtml += "<a class='list-group-item list-group-item-action cls_ingredientCont ingredient_"+ catagoryJson[j].id +"'>"
 											+ "<label class='col-4'>" + catagoryJson[j].name +"</label>"
-											+ "<label class='col-4'>" + (catagoryJson[j].tamilName ?catagoryJson[j].tamilName : 'Name')  +"</label>"
+											+ "<label class='col-4'>" + catagoryJson[j].unit +"</label>"
 											+ "<label class='btn btn-info btn-md mr-3 col-1 text-center cls_editIngredient' idx='" + catagoryJson[j].id +"' data-toggle='modal' data-target='#ingredientModal'>Edit</label>"
 											+ "<label class='btn btn-secondary btn-md mr-3 col-1 text-center cls_deleteIngredient' idx='" + catagoryJson[j].id +"' name='" + catagoryJson[j].name +"'>Delete</label>"
 										+ "</a>"
@@ -46,14 +46,12 @@ IngredientTab.prototype.registerEvents = function() {
 			var id = _this.ingredientJsonArr[length-1].id+1;
 
 			var name = $("#id_name").val().trim();
-			var tamilName = $("#id_tamilName").val().trim();
 			var unit = $("#id_unit").val();
 			var category = $("#id_category").val();
 
 			var ingredientObj = {
 					"id": id,
 					"name": name,
-					"tamilName": tamilName,
 					"category": category,
 					"unitOfMeasure": unit
 					};
@@ -74,7 +72,6 @@ IngredientTab.prototype.registerEvents = function() {
 			   if($(this).hasClass("cls_createIngredient")) {
 				   $(".modal-title", modal).text("Create Ingredient");
 		    	   $(".cls_ingredientId", modal).val("");
-		    	   $(".cls_ingredientName", modal).val("");
 		    	   $(".cls_ingredientTamilName", modal).val("");
 		    	   $(".cls_ingredientCategory", modal).val("");
 		    	   $(".cls_ingredientUnit", modal).val("");
@@ -86,14 +83,12 @@ IngredientTab.prototype.registerEvents = function() {
 			       {
 			    	   var id = curIngredientObj.id;
 			    	   var name = curIngredientObj.name;
-			    	   var tamilName = curIngredientObj.tamilName ? curIngredientObj.tamilName : "";
 			    	   var categoryName = curIngredientObj.categoryName;
 			    	   var unit = curIngredientObj.unit;
 			    	   var modal = $("#ingredientModal");
 			    	   $(".modal-title", modal).text("Edit Ingredient");
 			    	   $(".cls_ingredientId", modal).val(id);
-			    	   $(".cls_ingredientName", modal).val(name);
-			    	   $(".cls_ingredientTamilName", modal).val(tamilName);
+			    	   $(".cls_ingredientTamilName", modal).val(name);
 			    	   $(".cls_ingredientCategory", modal).val(categoryName);
 			    	   $(".cls_ingredientUnit", modal).val(unit);
 			       }
