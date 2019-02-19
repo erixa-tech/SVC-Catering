@@ -15,11 +15,12 @@ OrderTab.prototype.init = function(){
 OrderTab.prototype.render = function(){
 	var _this = this;
 	var renderHtml = [];
+	
 	if(_this.isNewOrder == 'true' && _this.isListServiceForms == 'true')
 	{
 		$("#id_createOrder").attr('hidden', true);
 		
-		renderHtml += '<form>'
+		renderHtml += '<form class="serviceFormDetails mb-2">'
 			+ '  <div class="form-group">'
 			+ '    <label for="serviceFormName">Session Name</label>'
 			+ '    <input type="text" class="form-control" id="sessionName" placeholder="Enter Session Name">'
@@ -33,23 +34,21 @@ OrderTab.prototype.render = function(){
 			+ '    <textarea class="form-control" id="sessionNotes" rows="3" placeholder="Enter Any Additional Session Notes"></textarea>'
 			+ '  </div>'
 			+ '  <h5><u>Add Receipes to Service Form</u></h5>'
-			+ '  <div class="form-group">'
+			+ '  <div class="form-group serviceFormReceipeMap">'
 			+ '    <div class="row">'
-			+ '      <div class="col">'
-			+ '        <label for="receipeCategory">Category</label>'
-			+ '        <select class="form-control" id="id_receipeCategory_sf" name="receipeCategory"></select>'
+			+ '      <div class="col text-center">'
+			+ '        <label>Category</label>'
+			+ '      </div>'
+			+ '      <div class="col text-center">'
+			+ '        <label>No. Of People</label>'
 			+ '      </div>'
 			+ '      <div class="col">'
-			+ '        <label for="receipeCount">No. Of People</label>'
-			+ '        <input type="text" class="form-control" required id="id_receipeCount_sf" placeholder="Enter Count / No. Of People" name="receipeCount">'
-			+ '      </div>'
-			+ '      <div class="col mt-4">'
-			+ '        <button class="btn btn-success mt-2 id_addReceipe_sf">Add</button>'
 			+ '      </div>'
 			+ '    </div>'
+			+ _this.getReceipeMapRowForSF()
 			+ '  </div>'
 			//TODO : Add / Remove DOM rows plugin
-			+ '  <div class="col text-right">'
+			+ '  <div class="col text-right mt-2">'
 			+ '      <button type="button" id="id_createServiceForm" class="btn btn-primary">Create Service Form</button>'
 			+ '      <button type="button" id="id_createServiceFormCancel" class="btn btn-secondary ml-3">Cancel</button>'
 			+ '  </div>'
@@ -181,6 +180,24 @@ OrderTab.prototype.render = function(){
 	}
 	$("#id_orderContent_tab").append(renderHtml);
 };
+OrderTab.prototype.getReceipeMapRowForSF = function() {
+	var _this = this;
+	var renderHtmlMapRow = [];
+	
+	renderHtmlMapRow += '    <div class="row recipeMapRowSf mt-2">'
+			+ '      <div class="col">'
+			+ '        <select class="form-control" id="id_receipeCategory_sf" name="receipeCategory"></select>'
+			+ '      </div>'
+			+ '      <div class="col">'
+			+ '        <input type="text" class="form-control" required id="id_receipeCount_sf" placeholder="Enter Count / No. Of People" name="receipeCount">'
+			+ '      </div>'
+			+ '      <div class="col">'
+			+ '        <button type="button" class="btn btn-success id_addReceipe_sf">Add</button>'
+			+ '      </div>'
+			+ '    </div>';
+			
+	return renderHtmlMapRow;
+};
 OrderTab.prototype.renderEvents = function() {
 	var _this = this;
 	
@@ -195,6 +212,11 @@ OrderTab.prototype.renderEvents = function() {
 		
 		$(document).on("click", "#id_listServiceForms", function(){
 			addQueryParamToUrlAndReload('listServiceForms', 'true');
+		});
+		
+		$(document).on("click", ".id_addReceipe_sf", function(){
+			var elemToAdd = $(_this.getReceipeMapRowForSF());
+			cloneDOM(elemToAdd, $('.serviceFormReceipeMap'));
 		});
 		
 		if(_this.isListServiceForms == "true") {

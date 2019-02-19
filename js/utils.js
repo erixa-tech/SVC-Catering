@@ -35,6 +35,20 @@ function addOptionsToSelect(optionsArray, parentId){
 	}
 }
 
+function addOptionsToSelectViaElem(optionsArray, elem){
+	if(optionsArray && optionsArray.length > 0) {
+		for(var i=0; i<optionsArray.length; i++) {
+			var option = document.createElement("option");
+			option.text = optionsArray[i];
+			elem.add(option);
+	    }
+	}
+}
+
+function cloneDOM(elemToClone, parentElem){
+	parentElem.append(elemToClone.clone());
+}
+
 function getFileValue(){
 	/*jQuery.get('js/Extras.txt').done(function(txt){
 		console.log("txt", txt);
