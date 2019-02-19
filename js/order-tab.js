@@ -49,7 +49,10 @@ OrderTab.prototype.render = function(){
 			+ '    </div>'
 			+ '  </div>'
 			//TODO : Add / Remove DOM rows plugin
-			+ '  <button type="button" id="id_createServiceForm" class="btn btn-primary">Create Service Form</button>'
+			+ '  <div class="col text-right">'
+			+ '      <button type="button" id="id_createServiceForm" class="btn btn-primary">Create Service Form</button>'
+			+ '      <button type="button" id="id_createServiceFormCancel" class="btn btn-secondary ml-3">Cancel</button>'
+			+ '  </div>'
 			+ '</form>';
 	}
 	else if(_this.isNewOrder == 'true')
@@ -97,7 +100,10 @@ OrderTab.prototype.render = function(){
 			+ '      </div>'
 			+ '    </div>'
 			+ '  </div>' */
-			+ '  <button type="button" id="id_listServiceForms" class="btn btn-primary">Save and Proceed To Service Form</button>'
+			+'    <div class="col text-right">'
+			+ '      <button type="button" id="id_listServiceForms" class="btn btn-primary">Save and Proceed To Service Form</button>'
+			+'       <button type="button" id="id_listServiceFormsCancel" class="btn btn-secondary ml-3">Cancel</button>'
+			+'   </div>'
 			+ '</form>';
 	}
 	else
