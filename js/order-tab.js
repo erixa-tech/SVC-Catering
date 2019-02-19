@@ -178,17 +178,22 @@ OrderTab.prototype.render = function(){
 OrderTab.prototype.renderEvents = function() {
 	var _this = this;
 	
-	$(document).on("click", ".cls_orderDetails", function(){
-		alert("Order Clicked");// Do ur code here
-	});
+	$(document).ready(function(){
+		$(document).on("click", ".cls_orderDetails", function(){
+			alert("Order Clicked");// Do ur code here
+		});
 
-	$(document).on("click", "#id_createOrder", function(){
-		addQueryParamToUrlAndReload('orderIsNew', 'true');
+		$(document).on("click", "#id_createOrder", function(){
+			addQueryParamToUrlAndReload('orderIsNew', 'true');
+		});
+		
+		$(document).on("click", "#id_listServiceForms", function(){
+			addQueryParamToUrlAndReload('listServiceForms', 'true');
+		});
+		
+		if(_this.isListServiceForms == "true") {
+			addOptionsToSelect(_this.dummyRecipies, "id_receipeCategory_sf");
+		}
 	});
 	
-	$(document).on("click", "#id_listServiceForms", function(){
-		addQueryParamToUrlAndReload('listServiceForms', 'true');
-	});
-	
-	addOptionsToSelect(_this.dummyRecipies, "id_receipeCategory_sf");
 };
