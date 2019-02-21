@@ -173,27 +173,31 @@
 				</div>
 				<h5><u>Add Ingredients to the Recipe</u></h5>
 				<div class="form-group">
-				    <div class="row">
-					    <div class="col">
-						  	<label for="ingredientCategory">Category</label>
-		                    <select class="form-control" id="id_ingredientCategory_recipe" name="ingredientCategory"></select>
+				    <div class="createRecipeIngredientMap">
+					    <div class="row ingredientMapRow">
+						    <div class="col">
+							  	<label for="ingredientCategory">Category</label>
+			                    <select class="form-control" id="id_ingredientCategory_recipe" name="ingredientCategory"></select>
+		                    </div>
+		                    <div class="col">
+							  	<label for="ingredientName">Name</label>
+			                    <select class="form-control" id="id_ingredientName_recipe" name="ingredientName"></select>
+		                    </div>
+		                    <div class="col">
+							  	<label for="ingredientUnit">Unit</label>
+			                    <select class="form-control" id="id_ingredientUnit_recipe" name="ingredientUnit" disabled></select>
+		                    </div>
+		                    <div class="col">
+						      <label for="qunatity">Quantity</label>
+						      <input type="text" class="form-control" required id="id_qunatity_recipe" placeholder="Enter Quantity" name="qunatity">
+						    </div>
+						    <div class="col mt-4">
+						    	<button class="btn btn-success mt-2 cls_addIngredient_sf">Add</button>
+						    </div>
+						    <div class="col">
+						    </div>
 	                    </div>
-	                    <div class="col">
-						  	<label for="ingredientName">Name</label>
-		                    <select class="form-control" id="id_ingredientName" name="ingredientName"></select>
-	                    </div>
-	                    <div class="col">
-						  	<label for="ingredientUnit">Unit</label>
-		                    <select class="form-control" id="id_ingredientUnit" name="ingredientUnit" disabled></select>
-	                    </div>
-	                    <div class="col">
-					      <label for="qunatity">Quantity</label>
-					      <input type="text" class="form-control" required id="id_qunatity" placeholder="Enter Quantity" name="qunatity">
-					    </div>
-					    <div class="col mt-4">
-					    	<button class="btn btn-success mt-2">Add</button>
-					    </div>
-                    </div>
+				    </div>
 				</div>
 			    <button type="submit" class="btn btn-info float-right">Save</button>
 		     </form>
