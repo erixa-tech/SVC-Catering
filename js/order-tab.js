@@ -298,6 +298,11 @@ OrderTab.prototype.renderEvents = function() {
 		$(document).on("click", ".cls_removeCurrentReceipeMap", function(){
 			$(this).parents('.recipeMapRowSf').remove();
 		});
+
+		$(document).on("click", "#id_createServiceForm", function(){
+			var dummyServiceFormList = [{"name": "jelabi", "count":"100"},{"name": "idly", "count":"10"}];
+			calculatePL(dummyServiceFormList);
+		});
 		
 		if(_this.isListServiceForms == "true") {
 			addOptionsToSelectViaElem(_this.dummyRecipies, $('.cls_receipeCategory_sf')[0]);
