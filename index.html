@@ -176,31 +176,36 @@
 				<div class="form-group">
 				    <div class="createRecipeIngredientMap">
 					    <div class="row ingredientMapRow">
-						    <div class="col">
+						    <div class="col-3">
 							  	<label for="ingredientCategory">Category</label>
-			                    <select class="form-control" id="id_ingredientCategory_recipe" name="ingredientCategory"></select>
+			                    <select class="form-control" id="id_ingredientCategory_recipe" name="ingredientCategory">
+			                    <option>--Select All--</option></select>
 		                    </div>
-		                    <div class="col">
+		                    <div class="col-4">
 							  	<label for="ingredientName">Name</label>
 			                    <select class="form-control" id="id_ingredientName_recipe" name="ingredientName"></select>
 		                    </div>
-		                    <div class="col">
+		                    <div class="col-2">
 							  	<label for="ingredientUnit">Unit</label>
-			                    <select class="form-control" id="id_ingredientUnit_recipe" name="ingredientUnit" disabled></select>
+			                    <select class="form-control" id="id_ingredientUnit_recipe" name="ingredientUnit"></select>
 		                    </div>
-		                    <div class="col">
+		                    <div class="col-2">
 						      <label for="qunatity">Quantity</label>
 						      <input type="text" class="form-control" required id="id_qunatity_recipe" placeholder="Enter Quantity" name="qunatity">
 						    </div>
-						    <div class="col mt-4">
-						    	<button class="btn btn-success mt-2 cls_addIngredient_sf">Add</button>
-						    </div>
-						    <div class="col">
+						    <div class="col-1">
 						    </div>
 	                    </div>
 				    </div>
+				     <div class="row">
+				        <div class="col text-right">
+				    		<div class="btn btn-success mt-2 cls_addIngredient_sf">Add</div>
+				    	</div>
+				    </div>
 				</div>
-			    <button type="submit" class="btn btn-info float-right">Save</button>
+				<div class="row text-right">
+			        <button type="submit" class="btn btn-info">Save</button>
+			    </div>
 		     </form>
 	        </div>
 	      </div>

@@ -10,9 +10,11 @@ RecipeTab.prototype.init = function() {
 };
 RecipeTab.prototype.render = function() {
 	var _this = this;
+	var allIngredientNames = getIngredientNamesByCategory();
 	addOptionsToSelect(_this.recipeCategory, "id_selectRecipeCategory");
 	addOptionsToSelect(_this.recipeCategory, "id_recipeCategory");
 	addOptionsToSelect(ingredientCategories, "id_ingredientCategory_recipe");
+	addOptionsToSelect(allIngredientNames, "id_ingredientName_recipe");
 
 	var recipeJson = {"Snacks" : [
 								{
@@ -149,7 +151,14 @@ RecipeTab.prototype.registerEvents = function() {
 		$(document).on("click", ".cls_addIngredient_sf", function(){
 			var elemToAdd = $(_this.getIngredientMapRow());
 			cloneDOM(elemToAdd, $('.createRecipeIngredientMap'));
-			/*addOptionsToSelectViaElem(_this.dummyRecipies, $('.cls_receipeCategory_sf')[$('.cls_receipeCategory_sf').length-1]);*/
+			addOptionsToSelectViaElem(ingredientCategories, $('.cls_ingredientCategory_recipe')[$('.cls_ingredientCategory_recipe').length-1]);
+		}); 
+		
+		$(document).on("change", ".cls_ingredientCategory_recipe", function(){
+			var category = $(this).val();
+			var ingredientNames = getIngredientNamesByCategory(category);
+			$(this).closest('.ingredientMapRow').find("#id_ingredientName_recipe option").remove();
+			addOptionsToSelectViaElem(ingredientNames, $($(this).closest('.ingredientMapRow').find("#id_ingredientName_recipe"))[0]);
 		});
 	});
 };
@@ -159,22 +168,19 @@ RecipeTab.prototype.getIngredientMapRow = function() {
 	var renderHtmlMapRow = [];
 	
 	renderHtmlMapRow += '    <div class="row ingredientMapRow mt-2 mb-1">'
-		              + '        <div class="col">'
-		              + '                <select class="form-control" id="id_ingredientCategory_recipe" name="ingredientCategory"></select>'
+		              + '        <div class="col-3">'
+		              + '                <select class="form-control cls_ingredientCategory_recipe" id="id_ingredientCategory_recipe" name="ingredientCategory"></select>'
 		              + '        </div>'
-		              + '        <div class="col">'
+		              + '        <div class="col-4">'
 		              + '            <select class="form-control" id="id_ingredientName_recipe" name="ingredientName"></select>'
 		              + '        </div>'
-		              + '        <div class="col">'
-		              + '            <select class="form-control" id="id_ingredientUnit_recipe" name="ingredientUnit" disabled></select>'
+		              + '        <div class="col-2">'
+		              + '            <select class="form-control" id="id_ingredientUnit_recipe" name="ingredientUnit"></select>'
 		              + '        </div>'
-		              + '		 <div class="col">'
+		              + '		 <div class="col-2">'
 		              + '			 <input type="text" class="form-control" required id="id_qunatity_recipe" placeholder="Enter Quantity" name="qunatity">'
 		              + '		 </div>'
-		              + '		 <div class="col">'
-		              + '		     <button class="btn btn-success cls_addIngredient_sf">Add</button>'
-		              + '		 </div>'
-		              + '        <div class="col">'
+		              + '        <div class="col-1">'
 		  			  +             ($('.ingredientMapRow').length>0 ? '<i class="fa fa-minus-circle cls_removeCurrentIngredientMap" style="font-size:25px;color:red"></i>' : '')
 		  			  + '        </div>'
 		              + '	</div>';
