@@ -128,14 +128,14 @@ RecipeTab.prototype.render = function() {
 		catagoryJson = recipeJson[_this.recipeCategory[i]];
 		if(catagoryJson){
 			renderHtml += "<div class='list-group col-11'>"
-							+ "<a href='' class='list-group-item list-group-item-action cls_recipeCateory active'>"
+							+ "<a class='list-group-item list-group-item-action cls_recipeCateory active text-white font-weight-bold'>"
 								+ _this.recipeCategory[i]
 
 						for(var j=0; j<catagoryJson.length ; j++){
 							renderHtml += "<a href='' class='list-group-item list-group-item-action'>"
 											+ "<label class='col-4'>" + catagoryJson[j].name +"</label>"
 											+ "<label class='col-4'>" + catagoryJson[j].tamilName +"</label>"
-											+ "<label class='btn btn-secondary btn-md mr-3 col-2 text-center cls_delete'>Delete</label>"
+											+ "<label class='btn btn-secondary btn-md mr-3 col-2 mb-0 text-center cls_delete'>Delete</label>"
 										+ "</a>"
 						}
 			renderHtml += "</a>"

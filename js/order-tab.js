@@ -259,15 +259,15 @@ OrderTab.prototype.getReceipeMapRowForSF = function() {
 	var _this = this;
 	var renderHtmlMapRow = [];
 	
-	renderHtmlMapRow += '    <div class="row recipeMapRowSf mt-4">'
+	renderHtmlMapRow += '<div class="row recipeMapRowSf mt-4">'
 			+ '      <div class="col">'
 			+ '        <select class="form-control cls_receipeCategory_sf" name="receipeCategory"></select>'
 			+ '      </div>'
 			+ '      <div class="col">'
-			+ '        <input type="number" class="form-control" required id="id_receipeCount_sf" placeholder="Enter Count / No. Of People" name="receipeCount">'
+			+ '        <input type="number" min="0" class="form-control" required id="id_receipeCount_sf" placeholder="Enter Count / No. Of People" name="receipeCount">'
 			+ '      </div>'
 			+ '      <div class="col">'
-			+ ($('.recipeMapRowSf').length>0 ? '<i class="fa fa-minus-circle mt-2 cls_removeCurrentReceipeMap" style="font-size:25px;color:red"></i>' : '')
+			+ ($('.recipeMapRowSf').length>0 ? '<a role="button" class="btn p-0"> <i class="fa fa-minus-circle mt-2 cls_removeCurrentReceipeMap" style="font-size:25px;color:red"></i></a>' : '')
 			+ '      </div>'
 			+ '    </div>';
 			

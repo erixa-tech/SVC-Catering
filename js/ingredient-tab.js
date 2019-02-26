@@ -21,15 +21,15 @@ IngredientTab.prototype.render = function() {
 		catagoryJson = _this.ingredientJson[categoryName];
 		if(catagoryJson){
 			renderHtml += "<div class='list-group col-11'>"
-							+ "<a class='list-group-item list-group-item-action cls_ingredientCateory active'>"
+							+ "<a class='list-group-item list-group-item-action cls_ingredientCateory active text-white font-weight-bold'>"
 								+ ingredientCategories[i]
 
 						for(var j=0; j<catagoryJson.length ; j++){
 							renderHtml += "<a class='list-group-item list-group-item-action cls_ingredientCont ingredient_"+ catagoryJson[j].id +"'>"
 											+ "<label class='col-4'>" + catagoryJson[j].name +"</label>"
 											+ "<label class='col-4'>" + catagoryJson[j].unit +"</label>"
-											+ "<label class='btn btn-info btn-md mr-3 col-1 text-center cls_editIngredient' idx='" + catagoryJson[j].id +"' data-toggle='modal' data-target='#ingredientModal'>Edit</label>"
-											+ "<label class='btn btn-secondary btn-md mr-3 col-1 text-center cls_deleteIngredient' idx='" + catagoryJson[j].id +"' name='" + catagoryJson[j].name +"'>Delete</label>"
+											+ "<label class='btn btn-info btn-md mr-3 mb-0 col-1 text-center cls_editIngredient' idx='" + catagoryJson[j].id +"' data-toggle='modal' data-target='#ingredientModal'>Edit</label>"
+											+ "<label class='btn btn-secondary btn-md mr-3 mb-0 col-1 text-center cls_deleteIngredient' idx='" + catagoryJson[j].id +"' name='" + catagoryJson[j].name +"'>Delete</label>"
 										+ "</a>"
 						}
 			renderHtml += "</a>"
