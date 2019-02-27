@@ -19,8 +19,56 @@ OrderTab.prototype.render = function(){
 	if(_this.isNewOrder == 'true' && _this.isListServiceForms == 'true')
 	{
 		$("#id_createOrder").attr('hidden', true);
-		
-		renderHtml += '<form class="serviceFormDetails mb-2">'
+
+		var serviceJson = [
+					        {
+					            "name": "Sangeet",
+					            "dateAndTime": "31-01-2019 6PM",
+					            "venue": "Temple"
+					        },
+					        {
+					            "name": "Muhurtham",
+					            "dateAndTime": "01-02-2019 5AM",
+					            "venue": "Temple"
+					        },
+					        {
+					            "name": "Reception",
+					            "dateAndTime": "01-02-2019 11AM",
+					            "venue": "Temple"
+					        }]
+
+		renderHtml += '<div class="cls_orderServiceList">'
+						+ '<div class="row">'
+							+ '<div class="text-right col-11 pb-4">'
+								+ '<a id="id_createService" class="btn btn-primary btn-md mr-3 col-2 text-white">'
+						          + '<i class="fa fa-plus-circle" aria-hidden="true"></i> Create New Service'
+						        + '</a>'
+							+ '</div>'
+					   	+ '</div>'
+		for(var i=0; i< serviceJson.length; i++){
+			if(i%2 == 0){
+				renderHtml += "<div class='row'>"
+			}
+			renderHtml += "<div class='card border-secondary mb-3 col-5 mx-4 cls_serviceDetails' style='cursor:pointer'>"
+								+ "<h6 class='card-header text-success bg-transparent border-secondary text-center cls_serviceName'>"+ serviceJson[i].name +"</h6>"
+								+ "<div class='card-body text-secondary font-weight-bold'>"
+							 		+ "<div class='row'>"
+							 		    + "<div class='card-title cls_eventVenue col-6'>"+ serviceJson[i].venue +"</div>"
+							    		+ "<div class='card-text cls_eventDate col-6'>"+ serviceJson[i].dateAndTime +"</div>"
+							    	+ "</div>"
+							  	+ "</div>"
+							  	+ "<div class='card-footer text-center bg-light border-secondary row p-0'>"
+							  		+ "<label class='col-6 border-right border-secondary m-0 p-2' style='cursor:pointer'>Complete</label>"
+							  		+ "<label class='col-6 m-0 p-2' style='cursor:pointer'>Delete</label>"
+							  	+ "</div>"
+							+ "</div>";
+			if(i%2 != 0 || (i == serviceJson.length-1)){
+				renderHtml += "</div>"
+			}
+		}
+		renderHtml += '</div>'
+
+		renderHtml += '<form class="serviceFormDetails mb-2 d-none">'
 			+ '  <div class="form-group">'
 			+ '  	<div class="row">'
 			+ '  		<div class="col">'
@@ -307,6 +355,11 @@ OrderTab.prototype.renderEvents = function() {
 		if(_this.isListServiceForms == "true") {
 			addOptionsToSelectViaElem(_this.dummyRecipies, $('.cls_receipeCategory_sf')[0]);
 		}
+
+		$(document).on("click", "#id_createService", function(){
+			$(".cls_orderServiceList").addClass("d-none");
+			$(".serviceFormDetails").removeClass("d-none");
+		});
 	});
 	
 };
