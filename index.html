@@ -15,6 +15,7 @@
 		<script type="text/javascript" src="js/purchaselist.js"></script>
 		<script>
 		    var ingredientCategories = ["Maligai", "KaaiKanigal", "Extras", "Suppliments"];
+		    var ingredientUnits = ["gram", "ml", "nos", "kattu", "kowli", "pocket", "meter"];
         </script> 
      </head>
 	<body>
@@ -142,7 +143,9 @@
 				  	<label for="ingredientCategory">Category</label>
                     <select class="form-control cls_ingredientCategory" id="id_ingredientCategory" name="ingredientCategory"></select>
 				</div>
-			    <button type="submit" class="btn btn-info float-right">Save</button>
+			    <div class="row float-right p-2">
+			        <div class="btn btn-info mt-2 cls_saveIngredient">Save</div>
+			    </div>
 		     </form>
 	       </div>
 	     </div>
@@ -175,23 +178,23 @@
 				<h5><u>Add Ingredients to the Recipe</u></h5>
 				<div class="form-group">
 				    <div class="createRecipeIngredientMap">
-					    <div class="row ingredientMapRow">
+					    <div class="row cls_ingredientMapRow">
 						    <div class="col-3">
 							  	<label for="ingredientCategory">Category</label>
-			                    <select class="form-control" id="id_ingredientCategory_recipe" name="ingredientCategory">
+			                    <select class="form-control cls_ingredientCategory_recipe" id="id_ingredientCategory_recipe" name="ingredientCategory">
 			                    <option>--Select All--</option></select>
 		                    </div>
 		                    <div class="col-4">
 							  	<label for="ingredientName">Name</label>
-			                    <select class="form-control" id="id_ingredientName_recipe" name="ingredientName"></select>
+			                    <select class="form-control cls_ingredientName_recipe" id="id_ingredientName_recipe" name="ingredientName"></select>
 		                    </div>
 		                    <div class="col-2">
 							  	<label for="ingredientUnit">Unit</label>
-			                    <select class="form-control" id="id_ingredientUnit_recipe" name="ingredientUnit"></select>
+			                    <select class="form-control cls_ingredientUnit_recipe" id="id_ingredientUnit_recipe" name="ingredientUnit"></select>
 		                    </div>
 		                    <div class="col-2">
 						      <label for="qunatity">Quantity</label>
-						      <input type="text" class="form-control" required id="id_qunatity_recipe" placeholder="Enter Quantity" name="qunatity">
+						      <input type="text" class="form-control cls_ingredientQunatity_recipe" required id="id_ingredientQunatity_recipe" placeholder="Enter Quantity" name="qunatity">
 						    </div>
 						    <div class="col-1">
 						    </div>
@@ -199,12 +202,12 @@
 				    </div>
 				     <div class="row">
 				        <div class="col text-right">
-				    		<div class="btn btn-success mt-2 cls_addIngredient_sf">Add</div>
+				    		<div class="btn btn-success mt-2 cls_addIngredient">Add</div>
 				    	</div>
 				    </div>
 				</div>
-				<div class="row text-right">
-			        <button type="submit" class="btn btn-info">Save</button>
+				<div class="row float-right p-2">
+			        <div class="btn btn-info mt-2 cls_saveRecipe">Save</div>
 			    </div>
 		     </form>
 	        </div>

@@ -315,7 +315,7 @@ OrderTab.prototype.getReceipeMapRowForSF = function() {
 			+ '        <input type="number" min="0" class="form-control" required id="id_receipeCount_sf" placeholder="Enter Count / No. Of People" name="receipeCount">'
 			+ '      </div>'
 			+ '      <div class="col">'
-			+ ($('.recipeMapRowSf').length>0 ? '<a role="button" class="btn p-0"> <i class="fa fa-minus-circle mt-2 cls_removeCurrentReceipeMap" style="font-size:25px;color:red"></i></a>' : '')
+			+ ($('.recipeMapRowSf').length>0 ? '<a role="button" class="btn p-0"> <i class="fa fa-minus-circle mt-2 cls_removeCurrentReceipeMap" title= "Remove" style="font-size:25px;color:red;cursor:pointer"></i></a>' : '')
 			+ '      </div>'
 			+ '    </div>';
 			
