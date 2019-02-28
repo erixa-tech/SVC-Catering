@@ -163,6 +163,14 @@ RecipeTab.prototype.registerEvents = function() {
 			var ingredientNames = getIngredientNamesByCategory(category);
 			$(this).closest('.cls_ingredientMapRow').find("#id_ingredientName_recipe option").remove();
 			addOptionsToSelectViaElem(ingredientNames, $($(this).closest('.cls_ingredientMapRow').find("#id_ingredientName_recipe"))[0]);
+			$($(this).closest('.cls_ingredientMapRow').find("#id_ingredientName_recipe")).trigger("change");
+		});
+		
+		$(document).on("change", ".cls_ingredientName_recipe", function(){
+			var name = $(this).val();
+			var ingredientUnits = getIngredientUnitsByName(name);
+			$(this).closest('.cls_ingredientMapRow').find("#id_ingredientUnit_recipe option").remove();
+			addOptionsToSelectViaElem(ingredientUnits, $($(this).closest('.cls_ingredientMapRow').find("#id_ingredientUnit_recipe"))[0]);
 		});
 		
 		$(document).on("click", ".cls_removeCurrentIngredientMap", function(){

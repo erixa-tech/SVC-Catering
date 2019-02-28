@@ -75,7 +75,7 @@ IngredientTab.prototype.registerEvents = function() {
 			   }
 			   else {
 				   var idx = $(this).attr("idx");
-			       var curIngredientObj = _this.getIngredientById(idx);
+			       var curIngredientObj = getIngredientById(idx);
 			       if(curIngredientObj && !$.isEmptyObject(curIngredientObj))
 			       {
 			    	   var id = curIngredientObj.id;
@@ -97,24 +97,4 @@ IngredientTab.prototype.registerEvents = function() {
 
 IngredientTab.prototype.updateIngredientData = function(ingredientObj) {
 	//File operation to save the ingredient in appropreate ingredient category
-}
-
-IngredientTab.prototype.getIngredientById = function(id) {
-	var _this = this;
-	var toRet = null;
-	$.each( _this.ingredientJson, function( categoryName, ingredientsArr ) {
-		$.each(ingredientsArr, function( index, ingredientObj ) {
-			  if((ingredientObj.id).toString() == id) {
-				  var tempObj = ingredientObj;
-				  tempObj.categoryName = categoryName;
-				  toRet = tempObj;
-				  return false;
-		      }
-		});
-		if(toRet != null) {
-			return false;
-		}
-			
-	});
-	return toRet;
 }
